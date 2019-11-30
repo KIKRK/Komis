@@ -1,21 +1,77 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>hello</servlet-name>
-    <servlet-class>KI.HelloServlet</servlet-class>
+    <servlet-name>controller</servlet-name>
+    <servlet-class>KI.ControllerServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>hello</servlet-name>
-    <url-pattern>/hello</url-pattern>
+    <servlet-name>controller</servlet-name>
+    <url-pattern>/controller</url-pattern>
   </servlet-mapping>
 
 
+  <servlet>
+    <servlet-name>process</servlet-name>
+    <servlet-class>KI.RedirectServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>process</servlet-name>
+    <url-pattern>/process</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>add_user</servlet-name>
+    <servlet-class>KI.SaveClientDataServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>add_user</servlet-name>
+    <url-pattern>/add_user</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>read_users</servlet-name>
+    <servlet-class>KI.ReadClientDataServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>read_users</servlet-name>
+    <url-pattern>/read_users</url-pattern>
+  </servlet-mapping>
+
+
+  <!--   To check: -->
+  <welcome-file-list>
+    <welcome-file>controller</welcome-file>
+  </welcome-file-list>
+
+  <context-param>
+    <param-name>adres email_tworcy</param-name>
+    <param-value>aaa@aaa.com</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>dataSource</param-name>
+    <param-value>jdbc/komis</param-value>
+  </context-param>
+
+
+
+  <!-- Skopiowane z Web01: -->
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/komis</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
 
 
 </web-app>
