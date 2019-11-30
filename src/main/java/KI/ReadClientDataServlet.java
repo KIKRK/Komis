@@ -55,7 +55,7 @@ public class ReadClientDataServlet extends HttpServlet {
 //<td>k1<td>
 //<td>k2<td>
 //</tr>
-//</table>
+//</table>!
 
 
 
